@@ -3,7 +3,7 @@
 
 <hr>
 
-## 💡 Technologies
+## 💡 Tecnologias
 
   <p align="left">
     <img src="https://raw.githubusercontent.com/devicons/devicon/d00d0969292a6569d45b06d3f350f463a0107b0d/icons/html5/html5-original.svg" alt="html5" width="35" height="35"/>
@@ -18,17 +18,15 @@
   </p>
 <hr>
 
-### Course Structure
+### Estrutura do curso
 
-Since the [course](https://www.udemy.com/course/the-complete-web-development-bootcamp/) is frequently updated so the contents might not be exactly similar, but overall structure is as follows -
-
-1. HTML
-2. CSS
-3. Bootstrap
-4. Javascript & jQuery
-5. NodeJS & Express Framework
-6. Embedded Javascript Templates (EJS)
-7. APIs & Restful APIs
-8. Authentication & Security
-9. DataBases
-10. ReactJS
+1. HTML ✅
+2. CSS ✅
+3. Bootstrap ✅
+4. Javascript & jQuery 🚧
+5. NodeJS & Express Framework 🚧
+6. Embedded Javascript Templates (EJS) 🚧
+7. APIs & Restful APIs 🚧
+8. Authentication & Security 🚧
+9. DataBases 🚧
+10. ReactJS 🚧
