@@ -9,7 +9,7 @@ function fizzBuzz() {
         } else if (count % 5 === 0) {
             output.push("Buzz");
         } else {
-            output.push(i);
+            output.push(count);
         }
     }
     console.log(output);
