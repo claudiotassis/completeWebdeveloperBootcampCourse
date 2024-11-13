@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Projeto</title>
+    <style>
+        /* PARTE 1: CSS Básico */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* PARTE 2: Classes simples */
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .destaque {
+            background-color: #000000;
+            color: aliceblue;
+        }
+
+        /* PARTE 3: Hover simples */
+        .botao {
+            background-color: #5e48b1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- PARTE 1: Estrutura HTML básica -->
+    <h1>Minha Lista de Tarefas</h1>
+    
+    <!-- PARTE 2: Lista de cards -->
+    <div class="card">
+        <h3>Tarefa 1</h3>
+        <p>Descrição da tarefa 1</p>
+        <button class="botao" onclick="marcarConcluida(this)">Concluir</button>
+        <button class="botaoExcluir" onclick="marcarConcluida(this)">Excluir</button>
+    </div>
+
+    <div class="card">
+        <h3>Tarefa 2</h3>
+        <p>Descrição da tarefa 2</p>
+        <button class="botao" onclick="marcarConcluida(this)">Concluir</button>
+        <button class="botaoExcluir" onclick="marcarConcluida(this)">Excluir</button>
+    </div>
+
+    <!-- PARTE 3: Formulário simples -->
+    <div class="card">
+        <h3>Adicionar Nova Tarefa</h3>
+        <input type="text" id="novaTarefa" placeholder="Digite a tarefa">
+        <input type="checkbox" id="concluida";>
+        <label for="concluida">Concluida</label>
+        <br>
+        <br>
+        <button class="botao" onclick="adicionarTarefa()">Adicionar</button>
+    </div>
+
+    <script>
+        // PARTE 1: JavaScript básico
+        function marcarConcluida(botao) {
+            // Pega o card pai do botão
+            let card = botao.parentElement;
+            
+            // Adiciona/remove classe de destaque
+            card.classList.toggle('destaque');
+            
+            // Muda o texto do botão
+            if(botao.textContent === 'Concluir') {
+                botao.textContent = 'Desfazer';
+            } else {
+                botao.textContent = 'Concluir';
+            }
+        }
+
+        // PARTE 2: Adicionar elementos
+        function adicionarTarefa() {
+            // Pega o valor do input
+            let texto = document.getElementById('novaTarefa','concluida').value;
+            
+            // Verifica se não está vazio
+            if(texto === '') {
+                alert('Digite uma tarefa!');
+                return;
+            }
+
+            // Cria novo card
+            let novoCard = document.createElement('div');
+            novoCard.className = 'card';
+            novoCard.innerHTML = `
+                <h3>Nova Tarefa</h3>
+                <p>${texto}</p>
+                <button class="botao" onclick="marcarConcluida(this)">Concluir</button>
+            `;
+
+            // Adiciona antes do último card (formulário)
+            let ultimoCard = document.querySelector('.card:last-child');
+            ultimoCard.before(novoCard);
+
+            // Limpa o input
+            document.getElementById('novaTarefa').value = '';
+        }
+    </script>
+</body>
+</html>
