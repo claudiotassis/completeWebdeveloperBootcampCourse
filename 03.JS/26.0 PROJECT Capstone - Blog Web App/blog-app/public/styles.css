@@ -1,0 +1,40 @@
+/* Styling for the main layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  header {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  /* Responsive Grid Layout */
+  .container .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Additional Button Styling */
+  button, .btn {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  button, .btn {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    padding: 0.4em 0.8em; /* Adjust button padding */
+  }
+  
+  .btn-sm {
+    padding: 0.3em 0.6em; /* Specific adjustment for small buttons */
+  }
+  

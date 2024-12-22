@@ -1,0 +1,40 @@
+<section>
+  <h2 class="text-center mb-4">Create a Post</h2>
+  <form action="/add" method="POST" class="mb-5">
+    <div class="mb-3">
+      <label for="title" class="form-label">Post Title</label>
+      <input type="text" id="title" name="title" class="form-control" placeholder="Enter post title" required>
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">Post Content</label>
+      <textarea id="content" name="content" class="form-control" rows="5" placeholder="Write your post here" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Add Post</button>
+  </form>
+</section>
+
+<section>
+  <h2 class="text-center mb-4">All Posts</h2>
+  <div class="row">
+    <% if (posts.length === 0) { %>
+      <p class="text-center">No posts available. Start by creating one!</p>
+    <% } else { %>
+      <% posts.forEach((post, index) => { %>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title"><%= post.title %></h5>
+              <p class="card-text"><%= post.content %></p>
+              <div class="d-flex justify-content-between">
+                <form action="/delete/<%= index %>" method="POST">
+                  <button class="btn btn-danger btn-sm px-1">Delete</button>
+                </form>
+                <a href="/edit/<%= index %>" class="btn btn-warning btn-sm px-1">Edit</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+</section>
